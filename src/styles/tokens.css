@@ -1,0 +1,38 @@
+/* 토스 스타일 디자인 토큰. 색/반경/그림자는 전부 여기서만 정의한다. */
+:root {
+  --bg: #f2f4f6;
+  --card: #ffffff;
+  --line: #edeff2;
+  --line-2: #e5e8eb;
+
+  --text: #191f28;
+  --sub: #6b7684;
+  --faint: #b0b8c1;
+
+  --blue: #3182f6;
+  --blue-weak: #eaf2fe;
+  --blue-deep: #1b5fbf;
+
+  --good: #00c471;
+  --good-weak: #e6f9f1;
+
+  --purple: #7c5cfc;
+  --purple-weak: #f0ecff;
+  --purple-line: #e0d8ff;
+
+  --warn: #ff7a00;
+  --warn-weak: #fff4ec;
+  --warn-line: #ffd9bc;
+
+  --radius: 20px;
+  --radius-sm: 18px;
+
+  --font: 'Apple SD Gothic Neo', 'Malgun Gothic', -apple-system, system-ui, 'Segoe UI',
+    'Yu Gothic', sans-serif;
+  --mono: 'Consolas', 'D2Coding', ui-monospace, monospace;
+
+  /* 폰 화면 최대 폭 — 데스크탑에서 목업으로 가둘 때 쓴다 */
+  --shell: 420px;
+
+  color-scheme: light;
+}
