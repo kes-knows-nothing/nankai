@@ -4,3 +4,7 @@ dist-ssr
 *.local
 .DS_Store
 .vite
+.vercel
+
+# 빌드 캐시 — 추적하면 안 됨
+*.tsbuildinfo
