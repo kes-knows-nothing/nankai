@@ -793,6 +793,11 @@ button {
   color: var(--blue);
 }
 
+.ex__jp mark.good {
+  background: var(--good-weak);
+  color: var(--good);
+}
+
 .ex__read {
   margin-top: 3px;
   color: var(--sub);
@@ -844,6 +849,20 @@ button {
 
 .call--tip .p {
   color: #4a3f6b;
+}
+
+/* 🌉 두 관점을 잇는 다리 */
+.call--bridge {
+  border: 1.5px solid #bfeeda;
+  background: var(--good-weak);
+}
+
+.call--bridge .call__title {
+  color: #00a25e;
+}
+
+.call--bridge .p {
+  color: #2e5f4a;
 }
 
 .call .p b {
@@ -942,6 +961,35 @@ button {
 
 .table tr.is-trap b {
   color: var(--warn);
+}
+
+/* 범용 그리드 표 — 첫 칸 특별대우 해제 */
+.table--grid td:first-child {
+  width: auto;
+  color: var(--sub);
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.table--grid td:first-child b {
+  color: var(--text);
+}
+
+/* 외우는 리듬 카드 */
+.rhythm {
+  margin: 12px 0 6px;
+  padding: 13px 15px;
+  border-radius: 14px;
+  background: var(--text);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 800;
+  line-height: 1.65;
+  letter-spacing: -0.02em;
+}
+
+.rhythm b {
+  color: #ffb86b;
 }
 
 /* 트리 다이어그램 */

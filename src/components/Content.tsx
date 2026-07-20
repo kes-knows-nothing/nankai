@@ -93,6 +93,33 @@ function BlockView({ block }: { block: Block }) {
           </table>
         </div>
       );
+
+    case 'grid':
+      return (
+        <div className="tablewrap">
+          <table className="table table--grid">
+            <thead>
+              <tr>
+                {block.head.map((h, i) => (
+                  <th key={i}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((r, i) => (
+                <tr key={i} className={r.trap ? 'is-trap' : undefined}>
+                  {r.cells.map((c, j) => (
+                    <td key={j}>{inline(c)}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+
+    case 'rhythm':
+      return <div className="rhythm">🎵 {inline(block.text)}</div>;
   }
 }
 

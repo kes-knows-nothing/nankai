@@ -1,4 +1,10 @@
 import type { Chapter, Level, Spine } from './types';
+import { n5ch1 } from './chapters/n5-ch1';
+import { n5ch2 } from './chapters/n5-ch2';
+import { n5ch3 } from './chapters/n5-ch3';
+import { n5ch4 } from './chapters/n5-ch4';
+import { n5ch5 } from './chapters/n5-ch5';
+import { n5ch6 } from './chapters/n5-ch6';
 import { n5ch7 } from './chapters/n5-ch7';
 
 /**
@@ -70,24 +76,14 @@ export const N5: Level = {
           id: 'a',
           label: '블록 A',
           title: '조사 3부작',
-          chapters: [
-            stub('CH 1', 'は와 が', '개념', { spine: 'wa', hub: true, status: 'done', progress: 100 }),
-            stub('CH 2', 'を와 に와 で', '개념', { status: 'done', progress: 100 }),
-            stub('CH 3', 'と·も·へ·から·まで·や', '개념', { status: 'done', progress: 100 }),
-          ],
+          chapters: [n5ch1, n5ch2, n5ch3],
         },
         {
           id: 'b',
           label: '블록 B',
           title: '동사 활용',
           note: 'Ch4는 그룹 판정이 뒤 4개 챕터의 관문이라 드릴이 가장 많아요.',
-          chapters: [
-            stub('CH 4', '동사 그룹 + て형', '활용', { spine: 'te', hub: true, status: 'done', progress: 100 }),
-            stub('CH 5', 'た형 (과거)', '활용', { spine: 'te', status: 'done', progress: 100 }),
-            stub('CH 6', 'ている', '개념', { spine: 'te', status: 'now', progress: 60 }),
-            n5ch7,
-            stub('CH 8', '의지형·명령형', '활용', { spine: 'mi' }),
-          ],
+          chapters: [n5ch4, n5ch5, n5ch6, n5ch7, stub('CH 8', '의지형·명령형', '활용', { spine: 'mi' })],
         },
         {
           id: 'c',

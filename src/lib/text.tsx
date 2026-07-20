@@ -16,7 +16,7 @@ export function inline(text: string): ReactNode {
  * 예문에서 강조할 부분만 <mark>로 감싼다.
  * "A → B" 꼴이 많고 강조는 항상 뒤쪽(B)에 있으므로 마지막 출현을 고른다.
  */
-export function marked(jp: string, mark?: string, tone: 'blue' | 'warn' = 'blue'): ReactNode {
+export function marked(jp: string, mark?: string, tone: 'blue' | 'warn' | 'good' = 'blue'): ReactNode {
   if (!mark) return jp;
   const at = jp.lastIndexOf(mark);
   if (at === -1) return jp;

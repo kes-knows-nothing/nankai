@@ -41,25 +41,34 @@ export interface Example {
   /** TTS로 읽을 텍스트. 없으면 jp에서 화살표 뒷부분을 읽는다. */
   speak?: string;
   mark?: string;
-  markTone?: 'blue' | 'warn';
+  markTone?: 'blue' | 'warn' | 'good';
 }
 
 export type Block =
   /** 문단. **굵게** 지원 */
   | { kind: 'p'; text: string; center?: boolean; small?: boolean }
   | ({ kind: 'ex' } & Example)
-  /** 글자 교체 시각화: 飲[む] → 飲[ま]ない */
-  | { kind: 'swap'; stem: string; from: string; to: string; tail: string }
-  /** 활용 대조표 */
+  /** 글자 교체 시각화: 飲[む] → 飲[ま]ない. tail 생략 가능 (書く→書いた) */
+  | { kind: 'swap'; stem: string; from: string; to: string; tail?: string }
+  /** 활용 대조표 — 첫 칸이 "끝글자"로 크게 강조되는 특수형 */
   | {
       kind: 'table';
       head: [string, string, string];
       rows: { end: string; form: string; ex: string; trap?: boolean }[];
-    };
+    }
+  /** 범용 표 — 열 수 자유, 첫 칸 특별대우 없음. 셀은 **굵게** 지원 */
+  | {
+      kind: 'grid';
+      head: string[];
+      rows: { cells: string[]; trap?: boolean }[];
+    }
+  /** 외우는 리듬 카드 (다크 배경). **굵게**가 주황으로 강조된다. 표만 던지지 않기 위한 장치 */
+  | { kind: 'rhythm'; text: string };
 
 export type Node =
   | { kind: 'section'; n?: number; title: string; body: Block[] }
-  | { kind: 'callout'; tone: 'warn' | 'tip'; title: string; body: Block[] }
+  /** bridge = 🌉 두 관점(🇰🇷/🇯🇵)을 잇는 초록 콜아웃 */
+  | { kind: 'callout'; tone: 'warn' | 'tip' | 'bridge'; title: string; body: Block[] }
   /** 정리 탭의 다크 트리 다이어그램 */
   | { kind: 'tree'; lines: { text: string; hl?: string; note?: string }[] }
   /** 번호 뱃지가 붙은 핵심 요약 */
