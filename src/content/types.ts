@@ -36,8 +36,14 @@ export type ChapterStatus = 'done' | 'now' | 'open';
  */
 export interface Example {
   jp: string;
-  /** 읽기 · 뜻 (예: "타베나이 · 안 먹는다") */
+  /** 독음만. 예: "타베나이" */
   read: string;
+  /**
+   * 뜻. 예: "안 먹는다"
+   * 독음과 줄을 나눠 보여준다 — 한 줄에 붙이면 눈이 어디를 봐야 할지 몰라진다.
+   * **굵게**가 markTone 색과 같은 색으로 칠해져, 일본어의 강조와 뜻의 강조가 시각적으로 이어진다.
+   */
+  mean?: string;
   /** TTS로 읽을 텍스트. 없으면 jp에서 화살표 뒷부분을 읽는다. */
   speak?: string;
   mark?: string;

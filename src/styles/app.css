@@ -798,11 +798,28 @@ button {
   color: var(--good);
 }
 
+/* 독음 — 보조 정보라 흐리게 뒤로 뺀다 */
 .ex__read {
-  margin-top: 3px;
-  color: var(--sub);
-  font-size: 12.5px;
+  margin-top: 4px;
+  color: var(--faint);
+  font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* 뜻 — 실제로 읽어야 할 정보라 독음보다 진하고 크게 */
+.ex__mean {
+  margin-top: 2px;
+  color: var(--sub);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* 뜻 안의 강조는 일본어 쪽 강조와 같은 색으로 — 눈이 둘을 잇는다 */
+.ex__mean b {
+  color: var(--ex-tone, var(--text));
+  font-weight: 800;
 }
 
 /* 콜아웃 */
@@ -964,6 +981,15 @@ button {
 }
 
 /* 범용 그리드 표 — 첫 칸 특별대우 해제 */
+.table--grid td {
+  padding-right: 10px;
+  line-height: 1.55;
+}
+
+.table--grid td:last-child {
+  padding-right: 0;
+}
+
 .table--grid td:first-child {
   width: auto;
   color: var(--sub);

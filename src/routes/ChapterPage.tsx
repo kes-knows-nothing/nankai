@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Shell } from '../components/Shell';
 import { Pane } from '../components/Content';
@@ -23,6 +23,13 @@ export function ChapterPage() {
   const chapter = getChapter(id);
   const detail = chapter?.detail;
   const spine = SPINES.find((s) => s.id === chapter?.spine);
+
+  // 다른 챕터로 넘어가면 처음(🇰🇷 탭 맨 위)부터 읽어야 한다.
+  // 같은 라우트라 컴포넌트가 유지돼서, 안 해주면 이전 탭·스크롤이 그대로 남는다.
+  useEffect(() => {
+    setTab('ko');
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [id]);
 
   const back = () => navigate('/grammar');
 

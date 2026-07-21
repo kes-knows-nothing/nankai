@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import type { Block, Example, Node } from '../content/types';
 import { inline, marked, speakable } from '../lib/text';
@@ -10,8 +10,15 @@ import { BranchIcon, ChevronIcon, PlayIcon } from './Icons';
  * content/의 데이터를 화면으로 옮기는 유일한 지점 — 챕터가 늘어나도 여기는 그대로다.
  */
 
+/** 강조 톤 → 실제 색. 뜻 줄의 굵은 글자를 일본어 강조와 같은 색으로 맞추는 데 쓴다. */
+const TONE: Record<string, string> = {
+  blue: 'var(--blue)',
+  warn: 'var(--warn)',
+  good: 'var(--good)',
+};
+
 /** 예문 한 줄. 재생 버튼을 누르면 일본어 TTS가 나간다. */
-function ExampleRow({ jp, read, speak: override, mark, markTone }: Example) {
+function ExampleRow({ jp, read, mean, speak: override, mark, markTone }: Example) {
   const [playing, setPlaying] = useState(false);
   // 재생 중 화면을 벗어나면 setState가 떠도는 걸 막는다
   const alive = useRef(true);
@@ -25,7 +32,10 @@ function ExampleRow({ jp, read, speak: override, mark, markTone }: Example) {
   };
 
   return (
-    <div className="ex">
+    <div
+      className="ex"
+      style={{ ['--ex-tone']: TONE[markTone ?? 'warn'] } as CSSProperties}
+    >
       <button
         type="button"
         className={playing ? 'ex__play is-playing' : 'ex__play'}
@@ -36,7 +46,8 @@ function ExampleRow({ jp, read, speak: override, mark, markTone }: Example) {
       </button>
       <div className="ex__txt">
         <div className="ex__jp">{marked(jp, mark, markTone)}</div>
-        <div className="ex__read">{read}</div>
+        <div className="ex__read">{inline(read)}</div>
+        {mean && <div className="ex__mean">{inline(mean)}</div>}
       </div>
     </div>
   );

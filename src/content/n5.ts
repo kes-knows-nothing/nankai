@@ -6,6 +6,7 @@ import { n5ch4 } from './chapters/n5-ch4';
 import { n5ch5 } from './chapters/n5-ch5';
 import { n5ch6 } from './chapters/n5-ch6';
 import { n5ch7 } from './chapters/n5-ch7';
+import { n5ch8 } from './chapters/n5-ch8';
 
 /**
  * 척추 정의 — 문법 탭의 필터 칩.
@@ -83,7 +84,7 @@ export const N5: Level = {
           label: '블록 B',
           title: '동사 활용',
           note: 'Ch4는 그룹 판정이 뒤 4개 챕터의 관문이라 드릴이 가장 많아요.',
-          chapters: [n5ch4, n5ch5, n5ch6, n5ch7, stub('CH 8', '의지형·명령형', '활용', { spine: 'mi' })],
+          chapters: [n5ch4, n5ch5, n5ch6, n5ch7, n5ch8],
         },
         {
           id: 'c',
