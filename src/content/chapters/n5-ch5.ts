@@ -252,9 +252,7 @@ export const n5ch5: Chapter = {
         },
         {
           kind: 'next',
-          label: 'て형 척추 · 다음',
           title: 'Ch6. ている',
-          sub: 'て형 위에 いる를 얹으면 "국면"이 보여요',
           to: 'n5-ch6',
         },
       ],

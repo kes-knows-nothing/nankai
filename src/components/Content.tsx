@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import type { Block, Example, Node } from '../content/types';
 import { inline, marked, speakable } from '../lib/text';
 import { speak } from '../lib/tts';
-import { BranchIcon, ChevronIcon, PlayIcon } from './Icons';
+import { ChevronIcon, PlayIcon } from './Icons';
 
 /**
  * 콘텐츠 렌더링 엔진.
@@ -200,13 +200,10 @@ function NodeView({ node }: { node: Node }) {
     case 'next': {
       const body = (
         <>
-          <span className="next__ic">
-            <BranchIcon />
-          </span>
           <span className="next__mid">
-            <span className="next__label">{node.label}</span>
+            <span className="next__label">{node.label ?? '다음'}</span>
             <span className="next__title">{node.title}</span>
-            <span className="next__sub">{node.sub}</span>
+            {node.sub && <span className="next__sub">{node.sub}</span>}
           </span>
           <ChevronIcon />
         </>

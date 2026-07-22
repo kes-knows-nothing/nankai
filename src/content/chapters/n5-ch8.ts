@@ -274,9 +274,7 @@ export const n5ch8: Chapter = {
         },
         {
           kind: 'next',
-          label: '블록 C · 다음',
           title: 'Ch9. 명사문 だ/です',
-          sub: '동사 활용을 마치고 명사문으로',
           to: 'n5-ch9',
         },
       ],

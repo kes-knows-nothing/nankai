@@ -231,9 +231,7 @@ export const n5ch6: Chapter = {
         },
         {
           kind: 'next',
-          label: '동사 활용 · 다음',
           title: 'Ch7. ない형 (부정)',
-          sub: '未然形이라는 새 척추가 열려요',
           to: 'n5-ch7',
         },
       ],

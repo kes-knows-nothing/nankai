@@ -219,9 +219,7 @@ export const n5ch4: Chapter = {
         },
         {
           kind: 'next',
-          label: 'て형 척추 · 다음',
           title: 'Ch5. た형 (과거)',
-          sub: 'て→た, で→だ. 규칙이 그대로 딸려와요',
           to: 'n5-ch5',
         },
       ],

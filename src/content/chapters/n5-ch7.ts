@@ -196,9 +196,7 @@ export const n5ch7: Chapter = {
         },
         {
           kind: 'next',
-          label: '未然形 척추 · 다음',
           title: 'Ch8. 의지형·명령형',
-          sub: '같은 未然形 자리에서 お단(의지)이 나와요',
           to: 'n5-ch8',
         },
       ],

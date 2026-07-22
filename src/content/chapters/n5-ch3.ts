@@ -237,9 +237,7 @@ export const n5ch3: Chapter = {
         },
         {
           kind: 'next',
-          label: '조사 3부작 완성 · 다음',
           title: 'Ch4. 동사 그룹 + て형',
-          sub: '활용의 시작. 여기서부터 て형 척추',
           to: 'n5-ch4',
         },
       ],

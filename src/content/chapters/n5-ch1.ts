@@ -475,9 +475,7 @@ export const n5ch1: Chapter = {
         },
         {
           kind: 'next',
-          label: '조사 3부작 · 다음',
           title: 'Ch2. を와 に와 で',
-          sub: '대상 / 점(点) / 장(場)',
           to: 'n5-ch2',
         },
       ],

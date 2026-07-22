@@ -79,8 +79,8 @@ export type Node =
   | { kind: 'tree'; lines: { text: string; hl?: string; note?: string }[] }
   /** 번호 뱃지가 붙은 핵심 요약 */
   | { kind: 'keys'; items: string[] }
-  /** 다음 챕터로 넘어가는 카드 */
-  | { kind: 'next'; label: string; title: string; sub: string; to?: string };
+  /** 다음 챕터로 넘어가는 카드. label 기본값 "다음", sub는 선택 */
+  | { kind: 'next'; label?: string; title: string; sub?: string; to?: string };
 
 /** ── 챕터 ─────────────────────────────────────────────────── */
 
